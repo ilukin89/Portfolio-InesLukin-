@@ -7,26 +7,33 @@ body {
     
 }
  
-.btn {
+
+.main1 {
+    width: 100%;
+    text-align: inherit;
     
-    display:inline-block;
- padding:0.35em 1.2em;
-  font-family: 'Quattrocento Sans', sans-serif;
- border:0.1em solid #999999;
- margin:0 0.3em 0.3em 0;
- border-radius:0.12em;
+    }
+.btn {
+    background: #ffff;
+font-family: Hind;
+    font-size: 0.6875rem;
+    font-weight: 400;
+    letter-spacing: 0.125em;
+    text-transform: uppercase;
  box-sizing: border-box;
  text-decoration:none;
   text-align: center;
  font-weight:300;
  color:#000000;
- text-align:center;
  transition-duration: 0.4s;
     }
 
 .btn:hover {
-  background-color: darkgrey; 
-  color: white;
+  background-color: lightblue; 
+  text-emphasis-color: white;
+    user-select: none;
+    border: 1px solid currentColor;
+    transform: skew(10deg);
 }
 
 btn:active {
@@ -52,6 +59,62 @@ btn:active {
  float: right;
  
     }
+
+
+
+$css-carousel: (
+    slides: 2,
+    transition-speed: 1s
+);
+
+// hide input radio fields
+input[name="carousel"] {
+    display: none;
+}
+
+// carousel navigation
+.carousel-nav {
+    label {
+        display: inline-block;
+        margin: 0 10px;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background-color 0.25s;
+    }
+}
+
+// carousel slides
+.carousel-slides {
+    width: 100%;
+    overflow: hidden;
+ 
+    .carousel-inner {
+        width: (100% * map_get($css-carousel, slides));
+        transition: margin map_get($css-carousel, transition-speed);
+    }
+ 
+    .carousel-item {
+        float: left;
+        width: (100% / map_get($css-carousel, slides));
+    }
+}
+
+// active carousel navigation
+@for $i from 1 through map_get($css-carousel, slides) {
+    #carousel-#{$i}:checked ~ .carousel-nav label[for="carousel-#{$i}"] {
+        background-color: #fff;
+    }
+}
+ 
+// active carousel slides
+@for $i from 1 through map_get($css-carousel, slides) {
+    #carousel-#{$i}:checked ~ .carousel-slides .carousel-inner {
+        margin-left: (-100% * ($i - 1));
+    }
+}
 
 
 /* -----
