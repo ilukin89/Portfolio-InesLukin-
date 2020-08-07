@@ -94,8 +94,8 @@ div.carousel-container > button:last-of-type {
 }
 
 	figure.carousel {
-		height: 256px;
-		width: 256px;
+		width: 70%;
+		
 		overflow: hidden;
 	}
 		figure.carousel ul {
@@ -107,3 +107,7 @@ div.carousel-container > button:last-of-type {
 		figure.carousel ul li {
 			display: inline-block;
 		}
+
+.aboutimg {
+float: left; 
+}
