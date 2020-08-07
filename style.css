@@ -1,77 +1,47 @@
 
 body {
-  background-color: #ffffff;
-  font-family: 'Quattrocento Sans', sans-serif;
-    width: 100%;
-   
-    
+    background-color: #ffffff;
+    font-family: 'Quattrocento Sans', sans-serif;
 }
- 
-
 .main1 {
     width: 100%;
     text-align: inherit;
-    
-    }
+}
 .btn {
     background: #ffff;
-font-family: Hind;
+    font-family: Hind;
     font-size: 0.6875rem;
     font-weight: 400;
     letter-spacing: 0.125em;
     text-transform: uppercase;
- box-sizing: border-box;
- text-decoration:none;
-  text-align: center;
- font-weight:300;
- color:#000000;
- transition-duration: 0.4s;
-    }
-
+    box-sizing: border-box;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 300;
+    color: #000000;
+    transition-duration: 0.4s;
+}
 .btn:hover {
-  background-color: lightblue; 
-  text-emphasis-color: white;
+    background-color: lightblue;
+    text-emphasis-color: white;
     user-select: none;
     border: 1px solid currentColor;
     transform: skew(10deg);
 }
-
 btn:active {
     transform: scale(0.99);
 }
-
-.container1 {
-
- width: 100%;
-
-    }
-
-.container2 {
-
- width: 60%;
- float: left;
-     
-    }
-
-.container3 {
-
- width: 40%;
- float: right;
- 
-    }
-
-
-
-$css-carousel: (
-    slides: 2,
-    transition-speed: 1s
-);
-
+.container {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+$css-carousel: (slides: 2,
+    transition-speed: 1s);
 // hide input radio fields
 input[name="carousel"] {
     display: none;
 }
-
 // carousel navigation
 .carousel-nav {
     label {
@@ -85,64 +55,66 @@ input[name="carousel"] {
         transition: background-color 0.25s;
     }
 }
-
 // carousel slides
 .carousel-slides {
     width: 100%;
     overflow: hidden;
- 
     .carousel-inner {
         width: (100% * map_get($css-carousel, slides));
         transition: margin map_get($css-carousel, transition-speed);
     }
- 
     .carousel-item {
         float: left;
         width: (100% / map_get($css-carousel, slides));
     }
 }
-
 // active carousel navigation
 @for $i from 1 through map_get($css-carousel, slides) {
-    #carousel-#{$i}:checked ~ .carousel-nav label[for="carousel-#{$i}"] {
+    #carousel-#{$i}:checked~.carousel-nav label[for="carousel-#{$i}"] {
         background-color: #fff;
     }
 }
- 
 // active carousel slides
 @for $i from 1 through map_get($css-carousel, slides) {
-    #carousel-#{$i}:checked ~ .carousel-slides .carousel-inner {
+    #carousel-#{$i}:checked~.carousel-slides .carousel-inner {
         margin-left: (-100% * ($i - 1));
     }
 }
-
-
 /* -----
 SVG Icons - svgicons.sparkk.fr
 ----- */
-
 .svg-icon {
-  width: 1em;
-  height: 1em;
+    width: 1em;
+    height: 1em;
 }
-
 .svg-icon path,
 .svg-icon polygon,
 .svg-icon rect {
-  fill: #999999;
+    fill: #999999;
 }
-
 .svg-icon circle {
-  stroke: #999999;
-  stroke-width: 1;
+    stroke: #999999;
+    stroke-width: 1;
 }
-
- .footer {
-     width: 100%;
-     height: 50px;
-     bottom:0;
-     align-content: center;
-     text-align: center;
-     position: absolute;
+.footer {
+    align-content: center;
+    text-align: center;
+}
+.navigation {
+    display: flex;
+    justify-content: space-between;
+}
+.flex-container {
+    display: flex;
+}
+.flex-container picture {
+    max-width: 50%;
+    padding: 10px;
+}
+.flex-container img {
+    max-width: 100%;
+}
+.flex-container .text-content-flex {
+    padding: 10px;
 }
 
