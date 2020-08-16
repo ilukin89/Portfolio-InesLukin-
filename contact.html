@@ -13,7 +13,7 @@
         <nav>
             <a href="./index.html">Home</a>
             <a href="./about.html">About</a>
-            <a href="./work.html">Work</a>
+            <a href="./contact.html">Contact</a>
 
             <img src="menu.png">
                 
@@ -23,39 +23,32 @@
 <body>
     <br><br><br>
     <div class="container">
-        <h3>About me</h3>
+       
         <br>
         <h1>
-            <p>UI/UX Designer with experience in Color & Material Design and Development</p>
+            <p>Contact Form</p>
         </h1>
-        <button class="btn"><i class="fa fa-file"></i><a href="pdf/CV%20Ines%20Lukin%2006%2020%20UXUI.pdf">DOWNLOAD
-                CV</a></button>
+        <h3>For business enquiries please use the form below.</h3>
         <hr>
     </div>
     
-    
-    
-        
-            
-            <div class="carousel-container">
-			<button class="carousel-previous">prev</button>
-			<figure class="carousel">
-				<ul>
-					<li><img src="scribo.jpg">
-					<li><img src="travectio.jpg">
-					<li><img src="logoplay.png">
-					
-				</ul>
-			</figure>
-			<button class="carousel-advance">Next</button>
-		</div>
+<div class="container">
+  <form action="action_page.php">
 
-		<script src="./carousel-example.js"></script>
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
 
-        
-    
-    
-    
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+
+    <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+    <input type="submit" value="Submit">
+
+  </form>
+</div>
     
 </body>
 <br>
